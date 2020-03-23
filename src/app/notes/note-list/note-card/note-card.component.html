@@ -1,0 +1,12 @@
+<div class="box-card">
+    <div [ngClass]="[getColorClassByType(note.color)]" class="box-type"></div>
+    <div class="box-text">
+        <div>
+            <span class="text-content">{{note.name}}</span>
+            <br>
+            <span class="text-small">{{note.lastEdited | euroDate}}</span>
+            <br>
+            <span class="text-small">{{note.content | textStats}}</span>
+        </div>
+    </div>
+</div>
