@@ -1,0 +1,29 @@
+<app-navbar (itemClicked)="handleAction($event)" [selectedPage]="'list'"></app-navbar>
+<div [@zoomIn]>
+    <div class="top">
+        <div class="heading">
+            <h3 class="first-bold">
+                <span>Your</span>
+                <span> Notes</span>
+            </h3>
+            <div class="small">
+                Select one to open it in the editor.
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="notes.length > 0; else empty">
+        <div class="box-main">
+            <app-note-card [routerLink]="[note.id]" routerLinkActive="router-link-active" *ngFor=" let note of notes " [note]="note "></app-note-card>
+            <app-scroll-to-top></app-scroll-to-top>
+        </div>
+    </div>
+    <ng-template #empty>
+        <div class="not-found ">
+            <h3>Oh, it looks a bit empty here</h3>
+            <span class="text-desktop ">Use the navbar above to add a new note.</span>
+            <span class="text-mobile ">Use the navbar below to add a new note.</span>
+            <img src="assets/images/not-found.svg " alt=" ">
+        </div>
+    </ng-template>
+</div>
