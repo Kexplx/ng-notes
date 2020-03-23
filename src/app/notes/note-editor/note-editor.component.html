@@ -8,13 +8,14 @@
         </div>
         <div></div>
         <div class="color-picker">
-            <div (click)="onColorSelect(0)" [ngClass]="{active: note.color==0, 'color dark':true}"></div>
-            <div (click)="onColorSelect(1)" [ngClass]="{active: note.color==1, 'color red':true}"></div>
-            <div (click)="onColorSelect(2)" [ngClass]="{active: note.color==2, 'color blue':true}"></div>
+            <div (click)="onColorSelect(0)" class="color dark"></div>
+            <div (click)="onColorSelect(1)" class="color red"></div>
+            <div (click)="onColorSelect(2)" class="color blue"></div>
         </div>
     </div>
 
     <div class="editor">
+        <div [ngClass]="{'dark': note.color == 0, 'red': note.color == 1,'blue': note.color ==2}" class="color-banner"></div>
         <textarea [(ngModel)]="note.content" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{note.content}}</textarea>
     </div>
 </div>
