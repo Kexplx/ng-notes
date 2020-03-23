@@ -28,8 +28,11 @@
         width: 100%;
         height: 100%;
         border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         box-sizing: border-box;
         padding: 30px;
+        margin-top: 0;
         border: none;
         resize: none;
         color: lighten($color: $text-primary, $amount: 10);
@@ -49,15 +52,24 @@
         margin-right: 5px;
         margin-left: 5px;
         cursor: pointer;
-        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
     }
-    & .dark {
-        @include bgHoverActive($dark);
-    }
-    & .red {
-        @include bgHoverActive($red);
-    }
-    & .blue {
-        @include bgHoverActive($blue);
-    }
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.red {
+    background-color: $red;
+}
+
+.dark {
+    background-color: $dark;
+}
+
+.color-banner {
+    height: 20px;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
