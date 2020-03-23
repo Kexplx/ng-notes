@@ -1,0 +1,20 @@
+<app-navbar (itemClicked)="handleAction($event)" [selectedPage]="'editor'"></app-navbar>
+<div [@zoomIn]>
+    <div class="top">
+        <div class="heading">
+            <h3>{{note.name}}</h3>
+            <span class="small">{{note.lastEdited | euroDate}} </span>
+            <span class="small">| {{note.content | textStats}}</span>
+        </div>
+        <div></div>
+        <div class="color-picker">
+            <div (click)="onColorSelect(0)" [ngClass]="{active: note.color==0, 'color dark':true}"></div>
+            <div (click)="onColorSelect(1)" [ngClass]="{active: note.color==1, 'color red':true}"></div>
+            <div (click)="onColorSelect(2)" [ngClass]="{active: note.color==2, 'color blue':true}"></div>
+        </div>
+    </div>
+
+    <div class="editor">
+        <textarea [(ngModel)]="note.content" spellcheck="false" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}">{{note.content}}</textarea>
+    </div>
+</div>
