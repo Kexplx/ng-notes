@@ -1,0 +1,42 @@
+@import 'src/sass/colors';
+.navbar {
+    background-color: $dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+}
+
+.nav-container {
+    max-width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: auto auto auto 1fr auto auto;
+    height: 6vh;
+    line-height: 6vh;
+}
+
+.item {
+    color: rgb(236, 236, 236);
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    text-align: center;
+    outline: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s ease;
+    &:hover {
+        border-bottom-color: $blue;
+    }
+    @media screen and (max-width: 600px) {
+        span {
+            display: none;
+        }
+    }
+}
+
+.mr-3 {
+    margin-right: 5px;
+}

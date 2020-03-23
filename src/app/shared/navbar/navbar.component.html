@@ -1,0 +1,23 @@
+<div class="navbar">
+    <div class="nav-container">
+        <div (click)="onHome()" class="item">
+            <i class="fas fa-lg fa-list mr-3 "></i>
+        </div>
+        <div class="item">
+            <i class="fas fa-lg fa-gavel mr-3 "></i>
+        </div>
+        <div appClick (leftOrWheelClick)="onExternalLinkClick('https://github.com')" class="item">
+            <i class="fab fa-lg fa-github mr-3 "></i>
+        </div>
+        <div></div>
+        <div *ngIf="selectedPage == 'editor'" (click)="onHome()" class="item ">
+            <i class="fas fa-lg fa-times mr-3"></i>
+        </div>
+        <div *ngIf="selectedPage == 'editor'" (click)="onSave()" class="item ">
+            <i class="fas fa-lg fa-check mr-3"></i>
+        </div>
+        <div *ngIf="selectedPage == 'list'" (click)="onAdd()" class="item ">
+            <i class="fas fa-lg fa-plus mr-3"></i>
+        </div>
+    </div>
+</div>
