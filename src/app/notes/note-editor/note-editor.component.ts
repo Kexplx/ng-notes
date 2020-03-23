@@ -47,6 +47,7 @@ export class NoteEditorComponent implements OnInit {
       case 'cancel':
         break;
       case 'save':
+        this.note.lastEdited = new Date().getTime();
         this.noteService.persistNote(this.note.id);
         break;
       default:
