@@ -1,14 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { NoteListComponent } from './notes/note-list/note-list.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { NoteCardComponent } from './notes/note-list/note-card/note-card.component';
+import { NoteEditorComponent } from './notes/note-editor/note-editor.component';
+import { ScrollToTopDirective } from './shared/scroll-to-top/scroll-to-top.directive';
+import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.component';
+import { ClickDirective } from './shared/navbar/middleclick.directive';
+import { TextStatsPipe } from './shared/text-stats.pipe';
+import { EuroDatePipe } from './shared/euro-date.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NoteListComponent,
+    NavbarComponent,
+    NoteCardComponent,
+    NoteEditorComponent,
+    ScrollToTopDirective,
+    ScrollToTopComponent,
+    ClickDirective,
+    TextStatsPipe,
+    EuroDatePipe,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
