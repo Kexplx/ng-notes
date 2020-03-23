@@ -1,0 +1,34 @@
+@import 'colors';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@include reset();
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    background-color: #eceff1;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    color: $text-secondary;
+    text-transform: uppercase;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid $text-secondary;
+}
+
+a {
+    @include set-color-hover($blue,
+    15);
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}

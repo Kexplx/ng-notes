@@ -1,0 +1,10 @@
+@import 'colors';
+.container {
+    margin: 90px auto 0 auto;
+    padding: 0 10px 0 10px;
+    max-width: 900px;
+}
+
+.text-secondary {
+    color: $text-secondary;
+}
