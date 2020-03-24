@@ -10,29 +10,24 @@ import { NoteColor } from 'src/app/models/note-types.enum';
   templateUrl: './note-editor.component.html',
   styleUrls: ['./note-editor.component.scss'],
   animations: [
-    trigger('zoomIn', [
+    trigger('slideInFromRight', [
       transition('void => *', [
         style({ transform: 'translateX(100%)' }),
-        animate(200)
+        animate('200ms ease-out')
       ])
     ])
   ]
 })
 export class NoteEditorComponent implements OnInit {
   note: Note;
+  id: string;
   constructor(private noteService: NoteService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
       (params: Params) => {
-        const id = params.id;
-        const note = this.noteService.getNoteById(id);
-
-        if (!note) {
-          // Display 404...
-          return;
-        }
-
+        this.id = params.id;
+        const note = this.noteService.getNoteById(params.id);
         this.note = note;
       }
     );
