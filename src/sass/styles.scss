@@ -6,29 +6,13 @@
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     background-color: $bg-primary;
-}
-
-html {
-    scroll-behavior: smooth
+    color: $text-primary;
 }
 
 h1,
 h2,
 h3 {
-    font-weight: 500;
+    font-weight: 400;
     color: $text-secondary;
     text-transform: uppercase;
-}
-
-hr {
-    border: none;
-    border-bottom: 1px solid $text-secondary;
-}
-
-a {
-    @include set-color-hover($blue,
-    15);
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
 }
