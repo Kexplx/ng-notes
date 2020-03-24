@@ -33,7 +33,11 @@ export class NoteService {
 
   getNoteById(id: string) {
     const entry = this.noteStore.find(x => x.note.id === id);
-    return entry.note;
+    if (entry) {
+      return entry.note;
+    }
+
+    return null;
   }
 
   persistNote(id: string) {
