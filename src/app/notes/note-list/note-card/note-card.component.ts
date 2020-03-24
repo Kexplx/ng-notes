@@ -14,16 +14,4 @@ export class NoteCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  getColorClassByType(color: NoteColor): string {
-    switch (color) {
-      case NoteColor.Red:
-        return 'bg-red';
-      case NoteColor.Blue:
-        return 'bg-blue';
-      case NoteColor.Dark:
-        return 'bg-dark';
-    }
-  }
-
 }
