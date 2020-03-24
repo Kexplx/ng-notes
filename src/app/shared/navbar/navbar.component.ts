@@ -29,8 +29,4 @@ export class NavbarComponent {
     const urlTree = this.router.createUrlTree(['/notes']);
     this.router.navigateByUrl(urlTree);
   }
-
-  onCancel() {
-    
-  }
 }
