@@ -7,6 +7,10 @@
             <span class="text-small">{{note.lastEdited | euroDate}}</span>
             <br>
             <span class="text-small">{{note.content | textStats}}</span>
+            <br>
+            <div class="btn-delete">
+                <i (click)="$event.stopPropagation(); onDelete();" class="fas fa-times"></i>
+            </div>
         </div>
     </div>
 </div>

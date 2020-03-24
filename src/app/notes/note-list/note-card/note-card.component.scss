@@ -32,4 +32,18 @@
             color: $text-primary;
         }
     }
+    & .btn-delete {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        i {
+            transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+            padding: 10px;
+            color: $red;
+            font-size: 20px;
+            &:hover {
+                color: darken($color: $red, $amount: 20);
+            }
+        }
+    }
 }
