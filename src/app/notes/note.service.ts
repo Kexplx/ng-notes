@@ -2,15 +2,18 @@ import { Injectable } from '@angular/core';
 import { Note } from '../models/note.model';
 import { NoteColor } from '../models/note-types.enum';
 import { generateId } from '../helpers/helpers';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NoteService {
   noteStore: { note: Note, temporary: boolean }[];
+  noteDeleted: Subject<string>;
 
   constructor() {
     this.noteStore = JSON.parse(localStorage.getItem('noteStore')) || [];
+    this.noteDeleted = new Subject();
   }
 
   getNotes(includeTemporaryNotes = false): Note[] {
@@ -37,14 +40,14 @@ export class NoteService {
     const entry = this.noteStore.find(x => x.note.id === id);
     entry.temporary = false;
 
-    localStorage.setItem('noteStore', JSON.stringify(this.noteStore));
+    this.persistStore();
   }
 
   getDefaultNoteName(): string {
     const regex = /Note (\d+)/;
     let currentMax = Number.MIN_VALUE;
     for (let i = 0; i < this.noteStore.length; i++) {
-      const result = regex.exec(this.noteStore.filter(x => !x.temporary). map(x => x.note.name)[i]);
+      const result = regex.exec(this.noteStore.filter(x => !x.temporary).map(x => x.note.name)[i]);
       if (result) {
         if (+result[1] > currentMax) {
           currentMax = +result[1];
@@ -54,5 +57,17 @@ export class NoteService {
 
     currentMax++;
     return 'Note ' + currentMax;
+  }
+
+  deleteNote(id: string) {
+    const indexToRemove = this.noteStore.findIndex(x => x.note.id === id);
+    this.noteStore.splice(indexToRemove, 1);
+
+    this.noteDeleted.next(id);
+    this.persistStore();
+  }
+
+  persistStore() {
+    localStorage.setItem('noteStore', JSON.stringify(this.noteStore));
   }
 }
