@@ -1,5 +1,5 @@
 <div class="box-card">
-    <div [ngClass]="[getColorClassByType(note.color)]" class="box-type"></div>
+    <div [ngClass]="{'bg-color-1': note.color == 1, 'bg-color-2': note.color == 2,'bg-color-3': note.color == 3}" class="box-type"></div>
     <div class="box-text">
         <div>
             <span class="text-content">{{note.name}}</span>
