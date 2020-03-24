@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
   animations: [
     trigger('slideInFromLeft', [
       transition('void => *', [
-        style({ transform: 'translateX(-100%)' }),
+        style({ transform: 'translateX(-100%)'}),
         animate('200ms ease-out')
       ])
     ]),
-    trigger('zoomOut', [
+    trigger('fadeOut', [
       transition('* => void', [
-        animate('200ms ease-out'),
-        style({ transform: 'scale(0%)' })
+        animate('400ms ease'),
+        style({ opacity: '0' })
       ])
     ]),
     trigger('slideUp', [

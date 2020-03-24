@@ -2,7 +2,7 @@
 <div [@slideInFromLeft]>
     <div class="top">
         <div class="heading">
-            <h3>
+            <h3 appJuli>
                 <span>Your Notes</span>
             </h3>
             <div class="small">
@@ -13,14 +13,14 @@
 
     <div *ngIf="!displayEmpty">
         <div class=" box-main ">
-            <app-note-card [@zoomOut] (deleteClicked)="onDeleteClicked($event) " [routerLink]="[note.id] " routerLinkActive="router-link-active " *ngFor="let note of notes " [note]="note "></app-note-card>
+            <app-note-card style="outline: none;" [@fadeOut] (deleteClicked)="onDeleteClicked($event) " [routerLink]="[note.id] " routerLinkActive="router-link-active " *ngFor="let note of notes " [note]="note "></app-note-card>
         </div>
     </div>
     <div [@slideUp] *ngIf="displayEmpty">
         <div class="not-found ">
-            <h3>Uh oh - It looks a bit empty here</h3>
+            <h3>Uh oh - It's a bit empty here</h3>
             <span>Use the navbar above to add a new note.</span>
-            <img src="assets/images/not-found.svg " alt="Floating robot">
+            <img src="assets/images/error-search.svg " alt="Floating robot">
         </div>
     </div>
 </div>
