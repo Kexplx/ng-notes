@@ -22,7 +22,7 @@ export class NoteService {
   }
 
   addNote(): string {
-    const note = new Note(generateId(), this.getDefaultNoteName(), new Date().getTime(), '', NoteColor.Dark);
+    const note = new Note(generateId(), this.getDefaultNoteName(), new Date().getTime(), '', NoteColor.Color1);
     this.noteStore.push({ note, temporary: true });
 
     return note.id;
