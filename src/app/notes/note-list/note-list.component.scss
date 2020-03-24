@@ -28,7 +28,7 @@
     }
     span {
         font-size: .9rem;
-        color: $text-secondary;
+        color: $text-primary;
     }
     display: grid;
     grid-template-columns: 1fr;
@@ -39,16 +39,5 @@
         pointer-events: none;
         width: 80px;
         animation: slideUpDown 1s ease infinite alternate;
-    }
-    & .text-mobile {
-        display: none;
-    }
-    @media screen and (max-width: 800px) {
-        & .text-desktop {
-            display: none;
-        }
-        & .text-mobile {
-            display: inherit;
-        }
     }
 }
