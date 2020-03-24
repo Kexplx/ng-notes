@@ -8,3 +8,26 @@
 .text-secondary {
     color: $text-secondary;
 }
+
+.bg-color-1 {
+    background-color: $color-1;
+}
+
+.bg-color-2 {
+    background-color: $color-2;
+}
+
+.bg-color-3 {
+    background-color: $color-3;
+}
+
+.heading {
+    h3 {
+        text-transform: none;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+    & .small {
+        font-size: .9rem;
+    }
+}
