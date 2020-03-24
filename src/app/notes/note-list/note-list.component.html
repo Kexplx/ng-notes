@@ -11,17 +11,16 @@
         </div>
     </div>
 
-    <div *ngIf="notes.length > 0; else empty">
-        <div class="box-main">
-            <app-note-card [routerLink]="[note.id]" routerLinkActive="router-link-active" *ngFor="let note of notes" [note]="note"></app-note-card>
+    <div *ngIf="!displayEmpty">
+        <div class=" box-main ">
+            <app-note-card [@zoomOut] (deleteClicked)="onDeleteClicked($event) " [routerLink]="[note.id] " routerLinkActive="router-link-active " *ngFor="let note of notes " [note]="note "></app-note-card>
         </div>
     </div>
-    <ng-template #empty>
+    <div [@slideUp] *ngIf="displayEmpty">
         <div class="not-found ">
-            <h3>Oh, it looks a bit empty here</h3>
-            <span class="text-desktop ">Use the navbar above to add a new note.</span>
-            <span class="text-mobile ">Use the navbar below to add a new note.</span>
-            <img src="assets/images/not-found.svg " alt=" ">
+            <h3>Uh oh - It looks a bit empty here</h3>
+            <span>Use the navbar above to add a new note.</span>
+            <img src="assets/images/not-found.svg " alt="Floating robot">
         </div>
-    </ng-template>
+    </div>
 </div>
