@@ -9,8 +9,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { NoteCardComponent } from './notes/note-list/note-card/note-card.component';
 import { NoteEditorComponent } from './notes/note-editor/note-editor.component';
-import { ScrollToTopDirective } from './shared/scroll-to-top/scroll-to-top.directive';
-import { ScrollToTopComponent } from './shared/scroll-to-top/scroll-to-top.component';
 import { ClickDirective } from './shared/navbar/middleclick.directive';
 import { TextStatsPipe } from './shared/text-stats.pipe';
 import { EuroDatePipe } from './shared/euro-date.pipe';
@@ -22,8 +20,6 @@ import { EuroDatePipe } from './shared/euro-date.pipe';
     NavbarComponent,
     NoteCardComponent,
     NoteEditorComponent,
-    ScrollToTopDirective,
-    ScrollToTopComponent,
     ClickDirective,
     TextStatsPipe,
     EuroDatePipe,
