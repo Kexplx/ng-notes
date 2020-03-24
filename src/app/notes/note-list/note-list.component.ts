@@ -10,21 +10,45 @@ import { Router } from '@angular/router';
   styleUrls: ['./note-list.component.scss'],
 
   animations: [
-    trigger('zoomIn', [
+    trigger('slideInFromLeft', [
       transition('void => *', [
         style({ transform: 'translateX(-100%)' }),
-        animate(200)
+        animate('200ms ease-out')
       ])
-    ])
+    ]),
+    trigger('zoomOut', [
+      transition('* => void', [
+        animate('200ms ease-out'),
+        style({ transform: 'scale(0%)' })
+      ])
+    ]),
+    trigger('slideUp', [
+      transition('void => *', [
+        style({ transform: 'translateY(100%)'}),
+        animate('200ms ease-out')
+      ])
+    ]),
   ]
 })
 export class NoteListComponent implements OnInit {
   notes: Note[];
+  displayEmpty = false;
   constructor(private noteService: NoteService, private router: Router) { }
 
   ngOnInit(): void {
     this.notes = this.noteService.getNotes();
     this.displayEmpty = this.notes.length === 0;
+    console.log(this.displayEmpty);
+    this.noteService.noteDeleted.subscribe(
+      id => {
+        this.notes.splice(this.notes.findIndex(x => x.id === id), 1);
+        if (this.notes.length === 0) {
+          setTimeout(() => {
+            this.displayEmpty = true;
+          }, 250);
+        }
+      }
+    );
   }
 
   handleAction(action: string) {
@@ -39,5 +63,9 @@ export class NoteListComponent implements OnInit {
         console.log('Invalid action.');
         break;
     }
+  }
+
+  onDeleteClicked(id: string) {
+    this.noteService.deleteNote(id);
   }
 }
