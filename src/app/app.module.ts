@@ -12,6 +12,8 @@ import { NoteEditorComponent } from './notes/note-editor/note-editor.component';
 import { ClickDirective } from './shared/navbar/middleclick.directive';
 import { TextStatsPipe } from './shared/text-stats.pipe';
 import { EuroDatePipe } from './shared/euro-date.pipe';
+import { JuliDirective } from './shared/juli.directive';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { EuroDatePipe } from './shared/euro-date.pipe';
     ClickDirective,
     TextStatsPipe,
     EuroDatePipe,
+    JuliDirective,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
