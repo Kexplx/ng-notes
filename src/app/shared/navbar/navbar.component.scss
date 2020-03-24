@@ -16,9 +16,13 @@
     margin-right: auto;
     margin-left: auto;
     display: grid;
-    grid-template-columns: auto auto auto 1fr auto auto;
+    grid-template-columns: auto auto 1fr auto auto;
     height: 6vh;
     line-height: 6vh;
+    @media screen and (max-width: 600px) {
+        height: 8vh;
+        line-height: 8vh;
+    }
 }
 
 .item {
@@ -41,4 +45,12 @@
 
 .mr-3 {
     margin-right: 5px;
+}
+
+.juli {
+    position: fixed;
+    top: 5px;
+    right: 50%;
+    color: rgb(255, 71, 71);
+    z-index: 2;
 }
