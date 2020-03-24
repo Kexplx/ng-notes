@@ -24,6 +24,7 @@ export class NoteListComponent implements OnInit {
 
   ngOnInit(): void {
     this.notes = this.noteService.getNotes();
+    this.displayEmpty = this.notes.length === 0;
   }
 
   handleAction(action: string) {
