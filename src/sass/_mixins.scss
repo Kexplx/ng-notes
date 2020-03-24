@@ -17,11 +17,11 @@
     }
 }
 
-@mixin set-color-hover($color, $darkenBy) {
+@mixin set-color-hover($color, $color-3enBy) {
     transition: color .2s;
     color: $color;
     &:hover {
-        color: darken($color: $color, $amount: $darkenBy);
+        color: darken($color: $color, $amount: $color-3enBy);
     }
 }
 
