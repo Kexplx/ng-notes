@@ -5,17 +5,6 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin-bottom: 3vh;
-    & .heading {
-        h3 {
-            text-transform: none;
-            margin-bottom: 5px;
-            margin-top: 0;
-        }
-        & .small {
-            font-size: .9rem;
-            color: $text-secondary;
-        }
-    }
 }
 
 .editor {
@@ -31,6 +20,7 @@
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         box-sizing: border-box;
+        background-color: $bg-navbar;
         padding: 30px;
         margin-top: 0;
         border: none;
@@ -53,18 +43,6 @@
         margin-left: 5px;
         cursor: pointer;
     }
-}
-
-.blue {
-    background-color: $blue;
-}
-
-.red {
-    background-color: $red;
-}
-
-.dark {
-    background-color: $dark;
 }
 
 .color-banner {

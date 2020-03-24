@@ -1,25 +1,10 @@
 @import 'src/sass/colors';
 @import 'src/sass/keyframes';
+@import 'src/sass/utils';
 .top {
     display: grid;
     grid-template-columns: auto 1fr auto;
     margin-bottom: 3vh;
-    & .heading {
-        & .first-bold {
-            margin-top: 0;
-            span:first-child {
-                font-weight: 700;
-            }
-            span:last-child {
-                font-weight: 400;
-            }
-            margin-bottom: 5px;
-        }
-        & .small {
-            font-size: .9rem;
-            color: $text-secondary;
-        }
-    }
 }
 
 .box-main {
