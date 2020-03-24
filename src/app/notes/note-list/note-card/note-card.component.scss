@@ -1,8 +1,8 @@
 @import 'src/sass/colors';
+@import 'src/sass/utils';
 .box-card {
-    width: 100%;
     height: 100%;
-    background-color: $bg-card;
+    background-color: $bg-navbar;
     border-radius: 5px;
     position: relative;
     cursor: pointer;
@@ -21,29 +21,15 @@
         top: 0;
     }
     & .box-text {
-        width: 100%;
         height: 100%;
         display: grid;
         align-items: center;
         justify-items: center;
         border-radius: inherit;
-        color: $text-primary;
-        font-weight: 500;
+        color: $text-secondary;
         & .text-small {
             font-size: .8rem;
-            color: $text-secondary;
+            color: $text-primary;
         }
     }
-}
-
-.bg-blue {
-    background-color: $blue;
-}
-
-.bg-red {
-    background-color: $red;
-}
-
-.bg-dark {
-    background-color: $dark;
 }

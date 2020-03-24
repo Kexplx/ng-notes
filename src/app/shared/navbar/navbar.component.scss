@@ -1,12 +1,14 @@
 @import 'src/sass/colors';
+@import 'src/sass/utils';
 .navbar {
-    background-color: $dark;
+    background-color: $bg-navbar;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     right: 0;
     width: 100%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 8px black;
 }
 
 .nav-container {
@@ -28,7 +30,7 @@
     border-bottom: 3px solid transparent;
     transition: all 0.15s ease;
     &:hover {
-        border-bottom-color: $blue;
+        border-bottom-color: $color-1;
     }
     @media screen and (max-width: 600px) {
         span {
