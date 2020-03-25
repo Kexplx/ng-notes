@@ -3,6 +3,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { Note } from 'src/app/models/note.model';
 import { NoteService } from '../note.service';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-note-list',
@@ -33,9 +34,10 @@ import { Router } from '@angular/router';
 export class NoteListComponent implements OnInit {
   notes: Note[];
   displayEmpty = false;
-  constructor(private noteService: NoteService, private router: Router) { }
+  constructor(private noteService: NoteService, private router: Router, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('NgNotes / Home');
     this.notes = this.noteService.getNotes();
     this.displayEmpty = this.notes.length === 0;
     console.log(this.displayEmpty);
