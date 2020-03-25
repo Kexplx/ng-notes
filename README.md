@@ -3,7 +3,7 @@
 <a href="https://badges.mit-license.org/" alt="MIT Licence">
     <img src="https://img.shields.io/badge/license-MIT-0677b7" />
 </a>
-<a href="https://badges.mit-license.org/" alt="MIT Licence">
+<a href="https://github.com/Kexplx/ng-notes/releases/tag/v1.1"  alt="NgNotes version 1.1">
     <img src="https://img.shields.io/badge/version-1.1-e77334" />
 </a>
 
