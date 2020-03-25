@@ -7,6 +7,8 @@
     <img src="https://img.shields.io/badge/version-1.1-e77334" />
 </a>
 
+<a href="https://kexplx.github.io/ng-notes">Live on GitHub Pages</a>
+
 An angular based WebApp for creating and <b>locally persisting</b> notes in your browser.
 
 <p align="center">
