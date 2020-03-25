@@ -1,4 +1,5 @@
-# Notes
+# NgNotes
+[![Build Status](https://travis-ci.com/Kexplx/ng-notes.svg?token=8vgv4N3GwoEWgs1jpqeS&branch=master)](https://travis-ci.com/Kexplx/ng-notes)
 <a href="https://badges.mit-license.org/" alt="MIT Licence">
     <img src="https://img.shields.io/badge/license-MIT-0677b7" />
 </a>
@@ -6,7 +7,7 @@
     <img src="https://img.shields.io/badge/version-1.1-e77334" />
 </a>
 
-WebApp for creating and <b>locally persisting</b> notes in your browser.
+An angular based WebApp for creating and <b>locally persisting</b> notes in your browser.
 
 <p align="center">
   <img src="doc/preview.png?raw=true" title="Sample Route">
