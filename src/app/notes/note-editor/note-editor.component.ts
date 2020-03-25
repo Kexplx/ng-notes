@@ -4,6 +4,7 @@ import { Note } from 'src/app/models/note.model';
 import { NoteService } from '../note.service';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { NoteColor } from 'src/app/models/note-types.enum';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-note-editor',
@@ -21,7 +22,7 @@ import { NoteColor } from 'src/app/models/note-types.enum';
 export class NoteEditorComponent implements OnInit {
   note: Note;
   id: string;
-  constructor(private noteService: NoteService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private noteService: NoteService, private route: ActivatedRoute, private router: Router, private titleService: Title) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -29,6 +30,8 @@ export class NoteEditorComponent implements OnInit {
         this.id = params.id;
         const note = this.noteService.getNoteById(params.id);
         this.note = note;
+
+        this.titleService.setTitle('NgNotes / ' + this.id);
       }
     );
   }
