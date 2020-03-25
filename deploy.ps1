@@ -1,6 +1,6 @@
 $path = $env:TEMP + '\' + (Get-Random)
 
-ng build --output-path $path --prod --base-href https://kexplx.github.io/ng-crimeview/
+ng build --output-path $path --prod --base-href https://kexplx.github.io/ng-notes/
 
 git checkout gh-pages
 
