@@ -14,6 +14,7 @@ import { TextStatsPipe } from './shared/text-stats.pipe';
 import { EuroDatePipe } from './shared/euro-date.pipe';
 import { JuliDirective } from './shared/juli.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FilterPipe } from './notes/note-list/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EuroDatePipe,
     JuliDirective,
     NotFoundComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
