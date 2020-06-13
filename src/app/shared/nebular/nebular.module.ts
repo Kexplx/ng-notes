@@ -53,7 +53,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
     NbSidebarModule.forRoot(),
-    NbThemeModule.forRoot(),
+    NbThemeModule.forRoot({ name: 'dark' }),
     NbDatepickerModule.forRoot(),
   ],
   exports: [

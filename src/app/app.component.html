@@ -1,17 +1,14 @@
 <nb-layout>
   <nb-layout-header fixed>
     <nb-actions size="small">
-      <nb-action (click)="toggleSidebar()" icon="menu-outline"></nb-action>
       <nb-action icon="home-outline"></nb-action>
-      <nb-action icon="people-outline"></nb-action>
+      <nb-action icon="github-outline"></nb-action>
     </nb-actions>
   </nb-layout-header>
 
   <nb-layout-column>
-    <h2>Hello World</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto culpa pariatur totam quod sapiente iusto libero quam tenetur praesentium quos?
-    </p>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </nb-layout-column>
-  <nb-sidebar collapsedBreakpoints="lg, md, sm, is, xs" responsive #sidebar></nb-sidebar>
 </nb-layout>

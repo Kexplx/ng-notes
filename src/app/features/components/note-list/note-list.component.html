@@ -1,0 +1,16 @@
+<h3>Your notes</h3>
+<div class="wrapper-notes">
+  <ng-container *ngFor="let i of [1, 2, 3, 4]">
+    <nb-card [accent]="i == 1 ? 'warning' : i === 2 ? 'info' : 'danger'" fullWidth>
+      <nb-card-header>
+        Note 1
+      </nb-card-header>
+      <nb-card-body>
+        Lorem ipsum dolor sit amet.
+      </nb-card-body>
+      <nb-card-footer>
+        Test
+      </nb-card-footer>
+    </nb-card>
+  </ng-container>
+</div>
